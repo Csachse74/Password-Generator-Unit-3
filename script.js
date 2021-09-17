@@ -1,17 +1,16 @@
-// Assignment Code
- //=============================================================================================================================================
-    //This is the basic Algorithm
-    // var upperCase = confirm('Would you like Upper case characters in your Password?')
-    // var lowerCase = confirm('Would you like Lower case characters in your Password?')
-    // var numbers = confirm('Would you like Numbers in your Password?')
-    // var special = confirm('Would you like Special characters in your Password?')
-    // var stringArray = [
-    //   'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    //   , 'abcdefghijklmnopqrstuvwxyz'
-    //   , '0123456789'
-    //   , '~`!@#$%^&*()_+-=[]{}|;:,<.>/?'
-    // ];
-    //=============================================================================================================================================
+//=============================================================================================================================================
+//This is the basic Algorithm
+// var upperCase = confirm('Would you like Upper case characters in your Password?')
+// var lowerCase = confirm('Would you like Lower case characters in your Password?')
+// var numbers = confirm('Would you like Numbers in your Password?')
+// var special = confirm('Would you like Special characters in your Password?')
+// var stringArray = [
+//   'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//   , 'abcdefghijklmnopqrstuvwxyz'
+//   , '0123456789'
+//   , '~`!@#$%^&*()_+-=[]{}|;:,<.>/?'
+// ];
+//=============================================================================================================================================
    
 var generateBtn = document.querySelector("#generate");
 
