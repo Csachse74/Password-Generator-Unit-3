@@ -1,4 +1,18 @@
 // Assignment Code
+ //=============================================================================================================================================
+    //This is the basic Algorithm
+    // var upperCase = confirm('Would you like Upper case characters in your Password?')
+    // var lowerCase = confirm('Would you like Lower case characters in your Password?')
+    // var numbers = confirm('Would you like Numbers in your Password?')
+    // var special = confirm('Would you like Special characters in your Password?')
+    // var stringArray = [
+    //   'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    //   , 'abcdefghijklmnopqrstuvwxyz'
+    //   , '0123456789'
+    //   , '~`!@#$%^&*()_+-=[]{}|;:,<.>/?'
+    // ];
+    //=============================================================================================================================================
+   
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -8,13 +22,13 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
+  //Get Number of chars
   var numOfChar = prompt('How many characters would you like in your Password?');
   if (numOfChar < 8) {
     alert('You need to have at least 8 characters');
@@ -23,32 +37,37 @@ function generatePassword() {
     alert('You must have a password of less than 129 characters');
     return;
   } else {
+    //define an array to contain rules, and add each rule to validate.  This is extensible for more rules.
     var ruleArray = [];
     ruleArray.push({
       AvailableCharacters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-      , prompt: confirm('Would you like Upper case characters in your Password?')
+      , prompt: 'Would you like Upper case characters in your Password?'
     });
     ruleArray.push({
       AvailableCharacters: 'abcdefghijklmnopqrstuvwxyz'
-      , prompt: confirm('Would you like Lower case characters in your Password?')
+      , prompt: 'Would you like Lower case characters in your Password?'
     });
     ruleArray.push({
       AvailableCharacters: '0123456789'
-      , prompt: confirm('Would you like Numbers in your Password?')
+      , prompt: 'Would you like Numbers in your Password?'
     });
     ruleArray.push({
       AvailableCharacters: '~`!@#$%^&*()_+-=[]{}|;:,<.>/?'
-      , prompt: confirm('Would you like Special characters in your Password?')
+      , prompt: 'Would you like Special characters in your Password?'
     });
-    var availableCharacters = '';
+    var availableCharacters;
+    //Prompt for each rule
     for (var i = 0; i < ruleArray.length; i++) {
-      if (ruleArray[i].prompt == true) {
+      if (confirm(ruleArray[i].prompt) == true) {
         availableCharacters += ruleArray[i].AvailableCharacters;
       } 
     }
-    if (availableCharacters === '') {
+    //Validate
+    if (!availableCharacters) {
       alert('No character types where chosen. Please start again.')
     }
+
+    //Generate Password
     var result = getRandomString(numOfChar, availableCharacters);
     return result;
   }
